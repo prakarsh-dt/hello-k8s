@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app.kubernetes.io/name: hello-kubernetes
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: "1.10"
+  name: hello-kubernetes-RELEASE-NAME
+spec:
+  ingressClassName: public
+  rules:
+    - host: demo1.devtron.xyz
+      http:
+        paths:
+          - backend:
+              service:
+                name: hello-kubernetes-RELEASE-NAME
+                port:
+                  number: 80
+            path: /
+            pathType: ImplementationSpecific
