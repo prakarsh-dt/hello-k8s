@@ -1,0 +1,19 @@
+# Source: hello-kubernetes/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-kubernetes-RELEASE-NAME
+  labels:
+    app.kubernetes.io/name: hello-kubernetes
+    app.kubernetes.io/instance: RELEASE-NAME
+    app.kubernetes.io/version: "1.10"
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: hello-kubernetes
+    app.kubernetes.io/instance: RELEASE-NAME
