@@ -16,7 +16,7 @@ app.set('view engine', 'handlebars');
 // Configuration
 
 var port = process.env.PORT || 8080;
-var message = process.env.MESSAGE || 'Meetnetes: Shubh Arambh';
+var message = process.env.MESSAGE || 'Hello-K8s: Deployed on Devtron';
 var renderPathPrefix = (
   process.env.RENDER_PATH_PREFIX ? 
     '/' + process.env.RENDER_PATH_PREFIX.replace(/^[\\/]+/, '').replace(/[\\/]+$/, '') :
